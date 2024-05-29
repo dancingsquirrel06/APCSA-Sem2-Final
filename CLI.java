@@ -5,14 +5,14 @@ import java.util.Scanner;
 public class CLI {
     private static List<Employee> employees = new ArrayList<>();
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) { //main method for running CLI
+        Scanner scanner = new Scanner(System.in); //scanner for user input
 
-        while (true) {
+        while (true) { //while loop to keep CLI running
             System.out.println("1. Add Employee");
             System.out.println("2. Display Employees");
             System.out.println("3. Exit");
-            int choice = scanner.nextInt();
+            int choice = scanner.nextInt(); //read user choice
 
             switch (choice) {
                 case 1:
@@ -27,7 +27,7 @@ public class CLI {
         }
     }
 
-    private static void addEmployee(Scanner scanner) {
+    private static void addEmployee(Scanner scanner) { //method to add new employee
         System.out.println("Enter type (1: Full-Time, 2: Part-Time, 3: Contractor):");
         int type = scanner.nextInt();
         scanner.nextLine();  // Consume newline
@@ -41,7 +41,7 @@ public class CLI {
         System.out.println("Enter salary:");
         double salary = scanner.nextDouble();
 
-        switch (type) {
+        switch (type) { //create specific employee type
             case 1:
                 System.out.println("Enter annual bonus:");
                 double annualBonus = scanner.nextDouble();
@@ -62,7 +62,7 @@ public class CLI {
         }
     }
 
-    private static void displayEmployees() {
+    private static void displayEmployees() { //method to display all employees
         for (Employee employee : employees) {
             employee.displayDetails();
         }
